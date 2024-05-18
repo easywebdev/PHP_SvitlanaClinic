@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\Adm\ServicesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Home;
+
+use App\Http\Controllers\Adm\HomeController as HomeC;
+use App\Http\Controllers\Adm\ServicesController as ServicesC;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +22,17 @@ use App\Http\Controllers\Home;
 //     return view('welcome');
 // });
 
-Route::get('/', [Home::class, 'index']);
+Route::get('/', [Home::class, 'index'])->name('index');
+
+Auth::routes(['register' => false]);
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Adm routes
+Route::middleware(['auth'])->group(function() {
+    Route::get('/adm', function() { return redirect('/adm/home'); });
+    
+    Route::get('adm/home', [HomeC::class, 'getHome'])->name('getHome');
+    
+    Route::get('adm/services', [ServicesC::class, 'getServices'])->name('getServices');
+});
