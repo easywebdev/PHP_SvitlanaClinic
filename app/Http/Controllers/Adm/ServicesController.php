@@ -7,6 +7,6 @@ class ServicesController extends Controller
 {
     public function getServices() 
     {
-        return 'Services';
+        return view('adm.services');
     }
 }

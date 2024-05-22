@@ -143,7 +143,7 @@ class GalerySeeder extends Seeder
 
         DB::table('galeries')->insert([
             'image'      => 'img-4.jpg',
-            'text'       => 'gtext2_service',
+            'text'       => 'gtext2_service2',
             'service_id' => $service2ID,
         ]);
     }
