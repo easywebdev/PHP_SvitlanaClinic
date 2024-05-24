@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Contact;
 use App\Models\Gallery;
+use App\Models\Home;
 use App\Models\Service;
 
 class ServicesController extends Controller 
@@ -28,6 +29,10 @@ class ServicesController extends Controller
 
         $contact = Contact::all('email', 'phone', 'address', 'image');
         echo $contact;
+        echo '</br></br>';
+
+        $home = Home::all();
+        echo $home;
 
         
         return view('services', [

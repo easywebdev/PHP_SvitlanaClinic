@@ -44,6 +44,10 @@ class DatabaseSeeder extends Seeder
         // Seed Slider
         $this->call(SlidetSeeder::class);
         $this->command->info('The Slides table filled');
+
+        // Seed Home
+        $this->call((HomeSeeder::class));
+        $this->command->info('The Home table filled');
     }
 }
 
@@ -94,17 +98,19 @@ class ServiceSeeder extends Seeder
 
         // Add 2 new rows
         DB::table('services')->insert([
-            'name'        => 'Service-1',
+            'title'       => 'Service-1',
             'keywords'    => 'keyword-1',
             'description' => 'description-1',
+            'name'        => 'Service-1',
             'text'        => 'Text-1',
             'image'       => 'service-1.jpg',
         ]);
 
         DB::table('services')->insert([
-            'name'        => 'Service-2',
+            'title'       => 'Service-2',
             'keywords'    => 'keyword-2',
             'description' => 'description-2',
+            'name'        => 'Service-2',
             'text'        => 'Text-2',
             'image'       => 'service-2.jpg',
         ]);
@@ -158,11 +164,14 @@ class ContactSeeder extends Seeder
 
         // Add 1 new rows
         DB::table('contacts')->insert([
-            'email'     => 'root@exumple.com',
-            'phone'    => '+380000000000000',
-            'facebook' => 'http://f',
-            'address' => 'address',
-            'image' => 'blank.jpg',
+            'title'       => 'Contacts',
+            'keywords'    => 'contacts keywords',
+            'description' => 'contacts description',
+            'email'       => 'root@exumple.com',
+            'phone'       => '+380000000000000',
+            'facebook'    => 'http://f',
+            'address'     => 'address',
+            'image'       => 'blank.jpg',
             'geolocation' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2573.259946091869!2d24.007267076822316!3d49.837573031302334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473add7847618b2b%3A0xcf2c906aedb8abca!2z0YPQuy4g0KjQtdC_0YLQuNGG0LrQuNGFLCAxMywg0JvRjNCy0L7Qsiwg0JvRjNCy0L7QstGB0LrQsNGPINC-0LHQu9Cw0YHRgtGMLCA3OTAwMA!5e0!3m2!1sru!2sua!4v1715715723290!5m2!1sru!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
         ]);
     }
@@ -186,6 +195,23 @@ class SlidetSeeder extends Seeder
             'name'     => 'slide-2.jpg',
             'image'    => 'slide_image-2',
             'position' => '2',
+        ]);
+    }
+}
+
+class HomeSeeder extends Seeder
+{
+    public function run()
+    {
+        // Delete previous data
+        DB::table('home')->delete();
+
+        // Add 1 new rows
+        DB::table('home')->insert([
+            'title'       => 'SvitlanaClinik',
+            'keywords'    => 'home keywords',
+            'description' => 'home description',
+            'text'        => 'home text',
         ]);
     }
 }
