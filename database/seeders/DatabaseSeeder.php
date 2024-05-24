@@ -123,25 +123,25 @@ class GalerySeeder extends Seeder
         $service2ID = DB::table('services')->where('name', 'Service-2')->value('id');
 
         // Add 4 new rows
-        DB::table('galeries')->insert([
+        DB::table('galleries')->insert([
             'image'      => 'img-1.jpg',
             'text'       => 'gtext1_service1',
             'service_id' => $service1ID,
         ]);
 
-        DB::table('galeries')->insert([
+        DB::table('galleries')->insert([
             'image'      => 'img-2.jpg',
             'text'       => 'gtext2_service1',
             'service_id' => $service1ID,
         ]);
 
-        DB::table('galeries')->insert([
+        DB::table('galleries')->insert([
             'image'      => 'img-3.jpg',
             'text'       => 'gtext1_service2',
             'service_id' => $service2ID,
         ]);
 
-        DB::table('galeries')->insert([
+        DB::table('galleries')->insert([
             'image'      => 'img-4.jpg',
             'text'       => 'gtext2_service2',
             'service_id' => $service2ID,
