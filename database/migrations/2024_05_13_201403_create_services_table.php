@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('name');
             $table->text('text')->nullable();
             $table->string('image');
+            $table->integer('position')->unsigned();
         });
     }
 

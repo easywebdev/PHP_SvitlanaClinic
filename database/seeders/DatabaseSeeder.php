@@ -104,6 +104,7 @@ class ServiceSeeder extends Seeder
             'name'        => 'Service-1',
             'text'        => 'Text-1',
             'image'       => 'service-1.jpg',
+            'position'    => '1',
         ]);
 
         DB::table('services')->insert([
@@ -113,6 +114,7 @@ class ServiceSeeder extends Seeder
             'name'        => 'Service-2',
             'text'        => 'Text-2',
             'image'       => 'service-2.jpg',
+            'position'    => '2',
         ]);
     }
 }
@@ -132,24 +134,28 @@ class GalerySeeder extends Seeder
         DB::table('galleries')->insert([
             'image'      => 'img-1.jpg',
             'text'       => 'gtext1_service1',
+            'position'   => '1',
             'service_id' => $service1ID,
         ]);
 
         DB::table('galleries')->insert([
             'image'      => 'img-2.jpg',
             'text'       => 'gtext2_service1',
+            'position'   => '2',
             'service_id' => $service1ID,
         ]);
 
         DB::table('galleries')->insert([
             'image'      => 'img-3.jpg',
             'text'       => 'gtext1_service2',
+            'position'   => '1',
             'service_id' => $service2ID,
         ]);
 
         DB::table('galleries')->insert([
             'image'      => 'img-4.jpg',
             'text'       => 'gtext2_service2',
+            'position'   => '2',
             'service_id' => $service2ID,
         ]);
     }

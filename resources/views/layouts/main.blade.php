@@ -23,14 +23,14 @@
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="theme-color" content="#ffffff">
 
-        <title>{{isset($title) ? $title : config('app.name', '')}}</title>
+        <title>{{isset($page->title) ? $page->title : config('app.name', '')}}</title>
     </head>
 
     <body>
         <header>
             <div class="container">
                 <div class="logo-wraper">
-                    <img src="images/logo.png" alt="logo">
+                    <img src="{{ asset('images/logo.png') }}" alt="logo">
                 </div>
                 <div>
                     <div>

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('image');
             $table->string('text')->nullable();
+            $table->integer('position')->unsigned();
             $table->unsignedBigInteger('service_id');
             $table->foreign('service_id')->references('id')->on('services')
                     ->onUpdate('cascade')

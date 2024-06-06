@@ -1,43 +1,48 @@
 <?
 
 namespace App\Http\Controllers;
-use App\Models\Contact;
 use App\Models\Gallery;
 use App\Models\Home;
 use App\Models\Service;
+use Illuminate\Http\Request;
+
 
 class ServicesController extends Controller 
 {
+    /**
+    * @return mixed
+    */
     public function getServices() 
     {
-        $services = Service::all();
+        $home = Home::all('title', 'keywords', 'description');
+        $services = Service::all('name', 'image')->sortBy('position');
         echo $services;
-        echo '</br></br>';
-        echo $services[0]->galleries;
-        echo '</br></br>';
-
-        $galleries = Gallery::all();
-        echo $galleries;
-        echo '</br></br>';
-        echo $galleries[0]->service;
-        echo '</br></br>';
         
         $page = (object) array(
-            'keywords'    => 'Services keywords',
-            'description' => 'Services description',
+            'title'       => $home[0]['title'],
+            'keywords'    => $home[0]['keywords'],
+            'description' => $home[0]['description'],
+            'services'    => $services,
         );
-
-        $contact = Contact::all('email', 'phone', 'address', 'image');
-        echo $contact;
-        echo '</br></br>';
-
-        $home = Home::all();
-        echo $home;
-
         
         return view('services', [
-            'title' => 'Services',
-            'page'  => $page,
+            'page' => $page
+        ]);
+    }
+
+    /**
+     * @param mixed $name
+     * @return mixed
+    */
+    public function getService(Request $request) 
+    {
+        $service = Service::where('name', $request->route('name'))->get();
+        $gallery = Gallery::where('service_id', $service[0]->id)->get()->sortBy('position');
+        echo $gallery;
+
+        return view('service', [
+            'page'    => $service[0],
+            'galleries' => $gallery,
         ]);
     }
 }
