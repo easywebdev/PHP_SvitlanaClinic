@@ -51,6 +51,7 @@ Route::middleware(['auth'])->group(function() {
     Route::post('/adm/addservice', [ServicesC::class, 'addService'])->name('addService');
 
     Route::get('/adm/contacts', [ContactsC::class, 'getContacts'])->name('getContacts');
+    Route::post('/adm/updatecontacts', [ContactsC::class, 'updateContacts'])->name('updateContacts');
 
     Route::post('/changeposition', [MovePositionC::class, 'changePosition'])->name('changePosition');
 });
