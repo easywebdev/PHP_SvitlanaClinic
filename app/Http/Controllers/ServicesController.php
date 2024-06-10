@@ -16,7 +16,6 @@ class ServicesController extends Controller
     {
         $home = Home::all('title', 'keywords', 'description');
         $services = Service::all('name', 'image')->sortBy('position');
-        echo $services;
         
         $page = (object) array(
             'title'       => $home[0]['title'],

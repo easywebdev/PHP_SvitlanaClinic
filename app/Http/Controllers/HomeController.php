@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Home;
+use App\Models\Slide;
+
 class HomeController extends Controller
 {
     public function index() 
     {
-        $page = (object) array(
-            'keywords'    => 'Home keywords',
-            'description' => 'Home description',
-        );
+        $page = Home::find(1)->all()[0];
+        $slides = Slide::all();
         
         return view('home', [
-            'title' => 'Home',
-            'page'  => $page,
+            'page'   => $page,
+            'slides' => $slides,
         ]);
     }
 }

@@ -10,7 +10,7 @@ use PhpOption\None;
 
 trait FileProcessing 
 {
-    public function uploadFile(Request $request, string $inputName, string $filePath, string $fileName, int $width = null, int $height = null) 
+    public function uploadFile(Request $request, string $inputName, string $filePath, string $fileName, int $width = null, int $height = null, bool $thumbnails = null) 
     {
         // Upload original file
         $file = $request->file($inputName);
@@ -32,6 +32,12 @@ trait FileProcessing
             
             $image->save((public_path($filePath . $fileName)));
         }
+
+        // Create Thumbnails
+        if($thumbnails) {
+            $image->scale(height: 100);
+            $image->save((public_path($filePath . "thumbnails/" . $fileName)));
+        }
         
     }
 
@@ -43,13 +49,15 @@ trait FileProcessing
     public function deleteFile(string $filePath, $fileName, bool $thumbnails)
     {
         // Delete file
-        if(Storage::exists($filePath . $fileName)) {
-            Storage::delete($filePath . $fileName);
+        if(file_exists($filePath . $fileName)) {
+            //Storage::delete(public_path($filePath . $fileName));
+            unlink($filePath . $fileName);
         }
 
         // Delete thumbnail
-        if($thumbnails && Storage::exists($filePath . 'thumbnails/' . $fileName)) {
-            Storage::delete($filePath . 'thumbnails/' . $fileName);
+        if($thumbnails && file_exists($filePath . 'thumbnails/' . $fileName)) {
+            //Storage::delete(public_path($filePath . 'thumbnails/' . $fileName));
+            unlink($filePath . 'thumbnails/' . $fileName);
         }
     }
 }

@@ -11,6 +11,7 @@ use App\Http\Controllers\Adm\HomeController as HomeC;
 use App\Http\Controllers\Adm\ServicesController as ServicesC;
 use App\Http\Controllers\Adm\ContactsController as ContactsC;
 use App\Http\Controllers\Adm\MovePositionController as MovePositionC;
+use App\Http\Controllers\Adm\SliderController as SliderC;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,13 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/adm', function() { return redirect('/adm/home'); });
     
     Route::get('/adm/home', [HomeC::class, 'getHome'])->name('getHome');
+
+    Route::get('/adm/slides', [SliderC::class, 'getSlides'])->name('getSlides');
+    Route::get('/adm/slides/{id}', [SliderC::class, 'getSlide'])->name('getSlide');
+    Route::get('adm/addslide', [SliderC::class, 'newSlide'])->name('newSlide');
+    Route::get('/adm/delslide/{id}', [SliderC::class, 'delSlide'])->name('delSlide');
+    Route::post('/adm/updateslide', [SliderC::class, 'updateSlide'])->name('updateSlide');
+    Route::post('/adm/addslide', [SliderC::class, 'addSlide'])->name('addSlide');
     
     Route::get('/adm/services', [ServicesC::class, 'getServices'])->name('getServices');
     Route::get('/adm/services/{id}', [ServicesC::class, 'getService'])->name('getService');

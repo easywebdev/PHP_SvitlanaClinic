@@ -82,6 +82,9 @@
                         <a class="nav-link" href="{{route('getHome')}}">Home</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{route('getSlides')}}">Slider</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{route('getServices')}}">Services</a>
                     </li>
                     <li class="nav-item">

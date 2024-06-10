@@ -4,12 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Home extends Model 
+class Slide extends Model 
 {
     /**
      * @var string
      */
-    protected $table = 'home';
+    protected $table = 'slides';
     /**
      * @var bool
      */
@@ -19,9 +19,8 @@ class Home extends Model
      * @var array
      */
     protected $fillable = [
-        'title',
-        'keywords',
-        'description',
-        'text',
+        'name',
+        'image',
+        'position',
     ];
 }

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Service;
 use App\Models\Gallery;
+use App\Models\Slide;
 
 class MovePositionController extends Controller 
 {   
@@ -25,9 +26,14 @@ class MovePositionController extends Controller
                 return ['url' => url('/adm/services')];
             case 'galleries':
                 $currentPosition = Gallery::where('id', $request->input('id'))->value('position');
-                $this->movePositionKey('services', $request->input('position'), $currentPosition, 'service_id', $request->input('val'));
+                $this->movePositionKey('galleries', $request->input('position'), $currentPosition, 'service_id', $request->input('val'));
                 Service::where('id', $request->input('id'))->UPDATE(['position' => $request->input('position')]);
-                return ['url' => url('/adm/services')];
+                return ['url' => url('/adm/galleries')];
+            case 'slides':
+                $currentPosition = Slide::where('id', $request->input('id'))->value('position');
+                $this->movePosition('slides', $request->input('position'), $currentPosition);
+                Slide::where('id', $request->input('id'))->UPDATE(['position' => $request->input('position')]);
+                return ['url' => url('/adm/slides')];
         }        
     }
 }

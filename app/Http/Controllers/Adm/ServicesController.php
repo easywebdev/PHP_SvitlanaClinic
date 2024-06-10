@@ -123,8 +123,8 @@ class ServicesController extends Controller
 
         if($service->position != $request->input('position')) {
             $this->movePosition('services', $request->input('position'), $service->position);
+            $service->position = $request->input('position');
         }
-        $service->position = $request->input('position');
 
         $service->save();
 

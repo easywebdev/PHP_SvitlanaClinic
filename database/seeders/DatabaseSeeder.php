@@ -192,14 +192,14 @@ class SlidetSeeder extends Seeder
 
         // Add 2 new rows
         DB::table('slides')->insert([
-            'name'     => 'slide-1.jpg',
-            'image'    => 'slide_image-1',
+            'name'     => 'slide_image-1',
+            'image'    => 'slide-1.jpg',
             'position' => '1',
         ]);
 
         DB::table('slides')->insert([
-            'name'     => 'slide-2.jpg',
-            'image'    => 'slide_image-2',
+            'name'     => 'slide_image-2',
+            'image'    => 'slide-2.jpg',
             'position' => '2',
         ]);
     }
