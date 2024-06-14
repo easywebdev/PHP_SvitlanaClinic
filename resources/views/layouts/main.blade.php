@@ -12,6 +12,7 @@
         <!-- Styles -->
         <link rel="stylesheet" type="text/css" href="{{asset('css/reset.css')}}">
         <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{asset('css/font-awesome.css')}}">
         @stack('css')
 
         <!-- Favicon -->
@@ -27,28 +28,31 @@
     </head>
 
     <body>
-        <header>
-            <div class="container">
+        <header class="s-header">
+            <div class="container flex-grid">
                 <div class="logo-wraper">
-                    <img src="{{ asset('images/logo.png') }}" alt="logo">
+                    <a href="{{ route('index') }}" class="link-base">
+                        <img src="{{ asset('images/logo.png') }}" alt="logo">
+                    </a>    
                 </div>
-                <div>
-                    <div>
-                        <h1>{{ config('app.name', 'Svitlanaclinic') }}</h1>
+
+                <div class="flex-grid__item_streach flex-column">
+                    <div class="">
+                        <h1 class="h1">{{ config('app.name', 'Svitlanaclinic') }}</h1>
                     </div>    
 
-                    <nav>
+                    <nav class="">
                         @include('mainmenu')
                     </nav>
                 </div>
             </div>
         </header>
 
-        <main>
+        <main class="s-main">
             @yield('content')
         </main>
 
-        <footer>
+        <footer class="s-footer">
             @include('footer')
         </footer>
 

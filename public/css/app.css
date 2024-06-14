@@ -1,3 +1,211 @@
-html, body {
-    font-size: 20px;
+@font-face {
+    font-family: Satisfy-Regular;
+    src: url(../webfonts/satisfy-regular.ttf);
 }
+
+/* Base */
+html, body {
+    font-size: 24px;
+    font-family: Satisfy-Regular;
+    background-color: #ffffff;
+    color: #2e291b;
+}
+
+.h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+}
+
+.h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-align: center;
+}
+
+.text-content {
+    text-align: justify;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-label {
+    font-weight: 800;
+}
+
+.list-none {
+    list-style: none;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.link-base, .link-base:focus, .link-base:visited {
+    text-decoration: none;
+    color: #2e291b;
+
+    &:hover {
+        color:#dec985;
+    }
+}
+
+.link-custome, .link-custome:focus, .link-custome:visited {
+    text-decoration: none;
+    color: #2e291b;
+
+    &:hover {
+        color: #ffffff;
+    }
+}
+
+.link-btn, .link-btn:focus, .link-btn:visited {
+    text-decoration: none;
+    background-color: #2e291b;
+    border-radius: 0.5rem;
+    color: #ffffff;
+    padding: 0.3rem 0.7rem;
+
+    &:hover {
+        opacity: 0.5;
+        color: #ffffff;
+    }
+}
+
+/**/
+
+/* Helper */
+.c-1 {
+    background-color: gray;
+}
+
+.c-2 {
+    background-color: green;
+}
+
+.c-3 {
+    background-color: red;
+}
+/**/
+
+/* Structural */
+.s-header {
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.s-slider, .s-main {
+    margin-bottom: 1rem;
+}
+
+.s-footer {
+    padding: 1rem;
+    background-color: #dec985;
+}
+
+.container {
+    max-width: 1100px;
+    margin-inline: auto;
+}
+
+.flex-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+    .flex-grid_justify {
+        justify-content: space-between;
+    }
+
+    .flex-grid_center {
+        justify-content: center;
+    }
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.flex-grid__item_streach {
+    flex: 1;
+}
+
+.flex-grid__item_content-middle {
+    align-content: center;
+}
+/**/
+
+/* Main Navigation */
+.nav {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.nav__link, .nav__link:focus, .nav__link:visited {
+    text-decoration: none;
+    color: #2e291b;
+
+    &:hover {
+        color: #c4a029;
+    }
+}
+
+    .nav__link_active {
+        color: #c4a029 !important;
+    }
+/**/
+
+/* Form */
+.form__item {
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    gap: 0.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.form__label {
+    text-align: end;
+}
+
+.form__control {
+    padding: 0.2rem 0.5rem !important;
+    border: solid 0.05rem #2e291b;
+    border-radius: 0.5rem;
+    font-size: 0.7rem;
+    min-width: 15rem;
+}
+
+.textarea {
+    min-height: 6rem;
+}
+/**/
+
+/* Services */
+.grid-image-wrapper {
+    width: 16.7rem;
+    height: 12.5rem;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+
+    &:hover {
+        box-shadow: 0.3rem 0.3rem 0.1rem rgba(0, 0, 0, 0.3);
+        transition-duration: 0.5s;
+    }
+}
+
+.grid-link, .grid-link:focus, .grid-link:visited {
+    text-decoration: none;
+    color: #2e291b;
+
+    &:hover {
+        color:#dec985;
+    }
+}
+/**/

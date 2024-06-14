@@ -1,13 +1,13 @@
 @extends('layouts.main')
 
 @section('content')
-    <div class="container">
+    <div class="container flex-grid flex-grid_center">
         @foreach ($page->services as $service)
-            <a href="{{ route('service', [$service->name]) }}" class="fgrid__item">
-                <div>
-                    <img src="images/home/services/{{ $service->image }}">
+            <a href="{{ route('service', [$service->name]) }}" class="grid-link">
+                <div class="grid-image-wrapper">
+                    <img src="images/home/services/{{ $service->image }}" alt="{{ $service->image }}">
                 </div>
-                <div>
+                <div class="text-center">
                     {{ $service->name }}
                 </div>
             </a>

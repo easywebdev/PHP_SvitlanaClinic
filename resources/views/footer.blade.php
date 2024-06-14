@@ -1,45 +1,48 @@
-<div class="block">
-    <div class="block__item">
+<?php $contact = App\Models\Contact::find(1)->get(['address', 'phone', 'email', 'facebook'])[0] ?>
+<div class="container flex-grid flex-grid_justify mb-1">
+    <div class="">
         <h2 class="h2">
             {{ config('app.name', 'Laravel') }}
         </h2>
-        <ul class="list">
+        <ul class="list-none">
             <li>
-                address
+                <span class="text-label">Address:</span> {{ $contact->address }}
             </li>
             <li>
-                phone
+                <span class="text-label">Phone:</span> {{ $contact->phone }}
             </li>
             <li>
-                email
+                <span class="text-label">Email:</span> {{ $contact->email }}
             </li>
             <li>
-                <a class="" href="" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a class="link-custome" href="{{ $contact->facebook }}" target="_blank"><i class="fab fa-facebook"></i></a>
             </li>
         </ul>
     </div>
 
-    <div class="block__item">
+    <div class="">
         <h2 class="h2">
             Contactez-moi
         </h2>
-        <form id="message" class="form" method="POST" action="">
+        <form id="message" class="form mb-1" method="POST" action="">
             @csrf
             <div class="form__item">
-                <label class="form__label" for="name">Nom *</label>
+                <label class="form__label text-label" for="name">Nom *</label>
                 <input id="name" class="form__control" type="text" name="name" required>
             </div>
             <div class="form__item">
-                <label class="form__label" for="email">E-mail *</label>
+                <label class="form__label text-label" for="email">E-mail *</label>
                 <input id="email" class="form__control" type="email" name="email" required>
             </div>
             <div class="form__item">
-                <label class="form__label" for="text">Message</label>
-                <textarea id="text" class="form__control" name="text"></textarea>
-            </div>
-
-            <a class="btn" href="javascript:sendMessage('')">Envoer</a>
+                <label class="form__label text-label" for="text">Message *</label>
+                <textarea id="text" class="form__control textarea" name="text"></textarea>
+            </div> 
         </form>
+
+        <div class="text-center">
+            <a class="link-btn" href="javascript:sendMessage('')">Envoer</a>
+        </div>
     </div>
 </div>
 

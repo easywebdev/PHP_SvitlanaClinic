@@ -12,7 +12,7 @@
     </div>
     
     <div class="container">
-        <div>
+        <div class="text-content">
             {{ $page->text }}
         </div>
     </div>
