@@ -37,7 +37,6 @@ class ServicesController extends Controller
     {
         $service = Service::where('name', $request->route('name'))->get();
         $gallery = Gallery::where('service_id', $service[0]->id)->get()->sortBy('position');
-        echo $gallery;
 
         return view('service', [
             'page'    => $service[0],

@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="text-content">
-            {{ $page->text }}
+            {!! $page->text !!}
         </div>
         
         <div>
