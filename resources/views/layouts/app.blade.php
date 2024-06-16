@@ -90,6 +90,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('getContacts')}}">Contacts</a>
                     </li>
+                    <li>
+                        <a class="nav-link" href="{{ route('elfinder.index') }}" target="_blank">File Manager</a>
+                    </li>
                 </ul>
             </div>
         </nav>

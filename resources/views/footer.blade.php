@@ -41,7 +41,7 @@
         </form>
 
         <div class="text-center">
-            <a class="link-btn" href="javascript:sendMessage('')">Envoer</a>
+            <a class="link-btn" href="javascript:sendMail('message')">Envoer</a>
         </div>
     </div>
 </div>
@@ -49,3 +49,8 @@
 <div class="container copyright">
     &copy; {{ config('app.name', '') }}
 </div>
+
+@push('scripts')
+<script src="{{asset('js/alertify.js')}}" type="application/javascript"></script>    
+<script src="{{asset('js/mail_processing.js')}}" type="application/javascript"></script>
+@endpush

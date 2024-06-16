@@ -144,6 +144,7 @@
 
 @push('scripts')
     <script src="{{asset('js/file_processing.js')}}" type="application/javascript"></script>
+    <script src="{{asset('js/ckeditor5/jquery-3.3.1.js')}}" type="application/javascript"></script>
     <script src="{{asset('js/ckeditor5/ckeditor.js')}}" type="application/javascript"></script>
     <script src="{{asset('js/ckeditor5/ckeditor_setup.js')}}" type="application/javascript"></script>
     

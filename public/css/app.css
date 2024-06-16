@@ -3,10 +3,15 @@
     src: url(../webfonts/satisfy-regular.ttf);
 }
 
+@font-face {
+    font-family: Kurale-Regular;
+    src: url(../webfonts/kurale-regular.ttf);
+}
+
 /* Base */
 html, body {
     font-size: 24px;
-    font-family: Satisfy-Regular;
+    font-family: Kurale-Regular;
     background-color: #ffffff;
     color: #2e291b;
 }

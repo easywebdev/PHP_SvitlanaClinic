@@ -13,13 +13,14 @@
     
     <div class="container">
         <div class="text-content">
-            {{ $page->text }}
+            {!! $page->text !!}
         </div>
     </div>
 @endsection
 
 @push('css')
     <link href="{{ asset('css/skdslider.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/alertify.css')}}">
 @endpush
 
 @push('scripts')

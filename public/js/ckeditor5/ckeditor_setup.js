@@ -1,22 +1,18 @@
-ClassicEditor
-    .create( document.querySelector( '#text' ), {
-        toolbar: {
-            items: [
-                'undo', 'redo',
-                '|', 'heading',
-                '|', 'fontfamily', 'fontsize', 'fontColor', 'fontBackgroundColor',
-                '|', 'bold', 'italic', 'strikethrough', 'subscript', 'superscript', 'code',
-                '-', // break point
-                '|', 'alignment',
-                'link', 'uploadImage', 'blockQuote', 'codeBlock',
-                '|', 'bulletedList', 'numberedList', 'todoList', 'outdent', 'indent'
+$(document).ready(function () {
+    //CKEDITOR.config.fontSize_defaultLabel = '18';
+    //CKEDITOR.font_defaultLabel = 'Arial';
+
+    CKEDITOR.replace( 'text', {
+        toolbar: [
+            ['Source', 'Undo', 'Redo'],
+            ['Cut', 'Copy', 'Paste', 'PasteText', 'HorizontalRule'],
+            ['Bold', 'Italic', '-', 'NumberedList', 'BulletedList', 'Subscript', 'Superscript', '-', 'Link', 'Unlink', 'Anchor' ],
+            ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Format', 'FontSize', 'TextColor', 'BGColor' ],
+            ['Image', 'Table', 'SpecialChar'],
             ],
-            shouldNotGroupWhenFull: true
-        }
-    } )
-    .then( editor => {
-        window.editor = editor;
-    } )
-    .catch( err => {
-        console.error( err.stack );
+        //width: '600px',
+        height: '500px',
+        filebrowserBrowseUrl : '/elfinder/ckeditor'
     } );
+});
