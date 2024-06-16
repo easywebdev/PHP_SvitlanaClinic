@@ -1,0 +1,9 @@
+diff a/public/css/app.css b/public/css/app.css	(rejected hunks)
+@@ -7,5 +7,6 @@
+ /* Base */
+ html, body {
+\ No newline at end of file
++    font-size: 24px;
+     font-family: Satisfy-Regular;
+     background-color: #ffffff;
+     color: #2e291b;
