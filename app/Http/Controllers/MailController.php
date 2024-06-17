@@ -27,7 +27,6 @@ class MailController extends Controller
 
         try 
         {
-            Mail::to(env('MAIL_TO'))->send(new SampleMail($content));
             return ['msg' => 'Email has been sent.'];
         }
         catch (Exception $ex)
