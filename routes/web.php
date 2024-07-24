@@ -12,6 +12,7 @@ use App\Http\Controllers\Adm\ServicesController as ServicesC;
 use App\Http\Controllers\Adm\ContactsController as ContactsC;
 use App\Http\Controllers\Adm\MovePositionController as MovePositionC;
 use App\Http\Controllers\Adm\SliderController as SliderC;
+use App\Http\Controllers\Adm\GalleryController as GalleryC;
 use App\Http\Controllers\MailController;
 
 /*
@@ -60,6 +61,13 @@ Route::middleware(['auth'])->group(function() {
     Route::get('adm/delservice/{id}', [ServicesC::class, 'delService'])->name('delService');
     Route::post('/updateservice', [ServicesC::class, 'updateService'])->name('updateService');
     Route::post('/adm/addservice', [ServicesC::class, 'addService'])->name('addService');
+
+    Route::get('/adm/gallery/{service_id}', [GalleryC::class, 'getServiceGallery'])->name('getServiceGallery');
+    Route::get('adm/galleryimage/{id}', [GalleryC::class, 'getGalleryImage'])->name('getGalleryImage');
+    Route::get('/adm/newgalleryimage/{service_id}', [GalleryC::class, 'newGalleryImage'])->name('newGalleryImage');
+    Route::get('adm/delgalleryimage/{id}', [GalleryC::class, 'delGalleryImage'])->name('delGalleryImage');
+    Route::post('adm/updategalleryimage', [GalleryC::class, 'updateGalleryImage'])->name('updateGalleryImage');
+    Route::post('/adm/addgalleryimage', [GalleryC::class, 'addGalleryImage'])->name('addGalleryImage');
 
     Route::get('/adm/contacts', [ContactsC::class, 'getContacts'])->name('getContacts');
     Route::post('/adm/updatecontacts', [ContactsC::class, 'updateContacts'])->name('updateContacts');

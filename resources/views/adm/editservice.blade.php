@@ -4,7 +4,10 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="card">
-            <div class="card-header">Edit Service</div>
+            <div class="card-header">
+                <a class="navbar-brand text-primary" href="{{ route('getServices') }}">Services</a> ->
+                {{ $service->name }}
+            </div>
 
             <div class="card-body">
                 @if (session('status'))
@@ -12,6 +15,10 @@
                         {{ session('status') }}
                     </div>
                 @endif
+
+                <div class="text-end">
+                    <a class="btn btn-primary" href="{{ route('getServiceGallery', ['service_id' => $service->id]) }}">Edit Gallery</a>
+                </div>
                 
                 <form id="update_service" method="POST" action="{{ route('updateService') }}" enctype="multipart/form-data">
                     @csrf
@@ -113,7 +120,7 @@
                             <div class="mb-3" style="width: 400px; height: 300px; overflow: hidden;">
                                 <img id="imgfile" src="{{ asset("images/home/services/$service->image") }}" style="width: 400px;">
                             </div>
-                            <input id="image" name="image" type="file" class="form-control @error('name') is-invalid @enderror" onchange="javascript:loadFile('#image', '#imgfile')">
+                            <input id="image" name="image" type="file" class="form-control @error('image') is-invalid @enderror" onchange="javascript:loadFile('#image', '#imgfile')">
                             <small class="form-text text-muted">Recommended file size is (400 x 300)px. Max size 2MB.</small>
                             
                             @error('image')
@@ -131,8 +138,8 @@
                     </div>
                 </form>
 
-                <div class="text-center">
-                    <a class="btn btn-primary" href="#">Edit Gallery</a>
+                <div class="text-end">
+                    <a class="btn btn-primary" href="{{ route('getServiceGallery', ['service_id' => $service->id]) }}">Edit Gallery</a>
                 </div>
 
             </div>

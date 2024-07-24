@@ -16,6 +16,11 @@ html, body {
     color: #2e291b;
 }
 
+body {
+    background-image: url(../images/bg-01.jpg) !important;
+    background-size: cover !important;
+}
+
 .h1 {
     font-size: 2rem;
     font-weight: 800;
@@ -28,6 +33,10 @@ html, body {
     text-align: center;
 }
 
+.bg-main {
+    background-color: #ffffff;
+}
+
 .text-content {
     text-align: justify;
 }
@@ -38,14 +47,21 @@ html, body {
 
 .text-label {
     font-weight: 800;
+    font-size: 1rem;
+    margin-right: 0.5rem;
 }
 
 .list-none {
     list-style: none;
+    font-size: 1rem;
 }
 
 .mb-1 {
     margin-bottom: 1rem;
+}
+
+.pad-1 {
+    padding: 1rem;
 }
 
 .link-base, .link-base:focus, .link-base:visited {
@@ -67,6 +83,7 @@ html, body {
 }
 
 .link-btn, .link-btn:focus, .link-btn:visited {
+    font-size: 1rem;
     text-decoration: none;
     background-color: #2e291b;
     border-radius: 0.5rem;
@@ -99,6 +116,7 @@ html, body {
 .s-header {
     padding: 1rem;
     margin-bottom: 1rem;
+    background-color: rgba(255, 255, 255, 0.5)
 }
 
 .s-slider, .s-main {
@@ -113,6 +131,7 @@ html, body {
 .container {
     max-width: 1100px;
     margin-inline: auto;
+    box-sizing: border-box;
 }
 
 .flex-grid {
@@ -154,6 +173,7 @@ html, body {
 
 .nav__link, .nav__link:focus, .nav__link:visited {
     text-decoration: none;
+    font-size: 1rem;
     color: #2e291b;
 
     &:hover {
@@ -169,7 +189,7 @@ html, body {
 /* Form */
 .form__item {
     display: grid;
-    grid-template-columns: 4rem 1fr;
+    grid-template-columns: 5rem 1fr;
     gap: 0.5rem;
     margin-bottom: 0.3rem;
 }
@@ -212,5 +232,11 @@ html, body {
     &:hover {
         color:#dec985;
     }
+}
+/**/
+
+/* Footer */
+.copyright {
+    font-size: 1rem;
 }
 /**/

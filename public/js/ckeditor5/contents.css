@@ -8,6 +8,11 @@ For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
     src: url(../../webfonts/satisfy-regular.ttf);
 }
 
+@font-face {
+    font-family: Kurale-Regular;
+    src: url(../webfonts/kurale-regular.ttf);
+}
+
 body
 {
 	/* Font */
@@ -28,7 +33,7 @@ body
 {
 	background-color: #ffffff;
 	color: rgba(39, 40, 44, 0.7);
-	font-family: Satisfy-Regular;
+	font-family: Kurale-Regular;
 	font-size: 18px;
 	line-height: 28px;
 	font-weight: 400;

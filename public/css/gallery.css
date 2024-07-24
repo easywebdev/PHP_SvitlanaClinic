@@ -1,0 +1,16 @@
+.gallery-image-size {
+    height: 8rem;
+    border-radius: 0.3rem;
+}
+
+.gallery-image-list, .gallery-image-list:hover, .gallery-image-list:active, .gallery-image-list:visited {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.gallery-image-link, .gallery-image-link:hover, .gallery-image-link:active, .gallery-image-link:focus .gallery-image-link:visited {
+    text-decoration: none !important;
+    border: 0px !important;
+    color: #ffffff !important;
+    cursor: pointer;
+}

@@ -52,7 +52,7 @@
             @yield('content')
         </main>
 
-        <footer class="s-footer">
+        <footer class="s-footer container">
             @include('footer')
         </footer>
 

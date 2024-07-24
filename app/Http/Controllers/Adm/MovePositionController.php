@@ -27,8 +27,8 @@ class MovePositionController extends Controller
             case 'galleries':
                 $currentPosition = Gallery::where('id', $request->input('id'))->value('position');
                 $this->movePositionKey('galleries', $request->input('position'), $currentPosition, 'service_id', $request->input('val'));
-                Service::where('id', $request->input('id'))->UPDATE(['position' => $request->input('position')]);
-                return ['url' => url('/adm/galleries')];
+                Gallery::where('id', $request->input('id'))->UPDATE(['position' => $request->input('position')]);
+                return ['url' => url('/adm/gallery/' . $request->input('val'))];
             case 'slides':
                 $currentPosition = Slide::where('id', $request->input('id'))->value('position');
                 $this->movePosition('slides', $request->input('position'), $currentPosition);

@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    <div class="s-slider">
+    <div class="s-slider container">
         <div id="slider" class="slider" style="background-image: url({{ count($slides) > 0 ? asset('images/home/slides/' . $slides[0]->image) : "" }}); background-size: cover">
             @foreach($slides as $slide)
                 <div class="slide">
@@ -11,7 +11,7 @@
         </div>
     </div>
     
-    <div class="container">
+    <div class="container bg-main pad-1">
         <div class="text-content">
             {!! $page->text !!}
         </div>

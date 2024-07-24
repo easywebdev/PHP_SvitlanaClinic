@@ -16,10 +16,11 @@ trait FileProcessing
         $file = $request->file($inputName);
         $file->move($filePath, $fileName);
 
+        $manager = new ImageManager(new Driver());
+        $image = $manager->read($filePath . $fileName);
+
         // Resize image if parameters set
         if($width || $height) {
-            $manager = new ImageManager(new Driver());
-            $image = $manager->read($filePath . $fileName);
             if(!$height) {
                 $image->scale(width: $width);
             } 
@@ -29,9 +30,9 @@ trait FileProcessing
             else {
                 $image->resize($width, $height);
             }
-            
-            $image->save((public_path($filePath . $fileName)));
         }
+
+        $image->save((public_path($filePath . $fileName)));
 
         // Create Thumbnails
         if($thumbnails) {
