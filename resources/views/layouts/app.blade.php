@@ -93,6 +93,9 @@
                     <li>
                         <a class="nav-link" href="{{ route('elfinder.index') }}" target="_blank">File Manager</a>
                     </li>
+                    <li>
+                        <a class="nav-link" href="{{ route('getFullStat') }}">Statistic</a>
+                    </li>
                 </ul>
             </div>
         </nav>

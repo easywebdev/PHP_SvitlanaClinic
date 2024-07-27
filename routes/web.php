@@ -13,6 +13,8 @@ use App\Http\Controllers\Adm\ContactsController as ContactsC;
 use App\Http\Controllers\Adm\MovePositionController as MovePositionC;
 use App\Http\Controllers\Adm\SliderController as SliderC;
 use App\Http\Controllers\Adm\GalleryController as GalleryC;
+use App\Http\Controllers\Adm\StatisticController as StatisticC;
+
 use App\Http\Controllers\MailController;
 
 /*
@@ -31,11 +33,13 @@ use App\Http\Controllers\MailController;
 // });
 
 // Front routes
-Route::get('/', [HomeController::class, 'index'])->name('index');
-Route::get('/services', [ServicesController::class, 'getServices'])->name('services');
-Route::get('/services/{name}', [ServicesController::class, 'getService'])->name('service');
-Route::get('/contacts', [ContactsController::class, 'getContacts'])->name('contacts');
-Route::post('/sendmail', [MailController::class, 'sendMail'])->name('sendMail');
+Route::middleware(['logvisit'])->group(function() {
+    Route::get('/', [HomeController::class, 'index'])->name('index');
+    Route::get('/services', [ServicesController::class, 'getServices'])->name('services');
+    Route::get('/services/{name}', [ServicesController::class, 'getService'])->name('service');
+    Route::get('/contacts', [ContactsController::class, 'getContacts'])->name('contacts');
+    Route::post('/sendmail', [MailController::class, 'sendMail'])->name('sendMail');
+});
 
 Auth::routes(['register' => false]);
 
@@ -71,6 +75,11 @@ Route::middleware(['auth'])->group(function() {
 
     Route::get('/adm/contacts', [ContactsC::class, 'getContacts'])->name('getContacts');
     Route::post('/adm/updatecontacts', [ContactsC::class, 'updateContacts'])->name('updateContacts');
+
+    Route::get('adm/fullstat', [StatisticC::class, 'getFullStat'])->name('getFullStat');
+    Route::get('adm/fullstat/{page}', [StatisticC::class, 'getPageStat'])->name('getPageStat');
+    Route::get('adm/delfullstat', [StatisticC::class, 'delFullStat'])->name('delFullStat');
+    Route::get('adm/delfulstat/{page}', [StatisticC::class, 'delPageStat'])->name('delPageStat');
 
     Route::post('/changeposition', [MovePositionC::class, 'changePosition'])->name('changePosition');
 });
