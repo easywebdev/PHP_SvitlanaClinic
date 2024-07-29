@@ -2,10 +2,10 @@
 
 @section('content')
     <div class="container">
-        <div class="flex-grid bg-main mb-1">
+        <div class="flex-grid bg-main mb-1 pad-1">
             <div class="flex-grid__item">
                 <div class="contact-image-wrapper">
-                    <img src="{{ asset("images/home/contacts/$page->image") }}" alt="Contact profile image">
+                    <img class="contact-image" src="{{ asset("images/home/contacts/$page->image") }}" alt="Contact profile image">
                 </div>
             </div>
 

@@ -50,8 +50,8 @@
                         <label for="image" class="col-md-4 col-form-label text-md-end">Image</label>
 
                         <div class="col-md-6">
-                            <div class="mb-3" style="width: 600px; height: 200px; overflow: hidden;">
-                                <img id="imgfile" src="{{ asset("images/home/slides/$slide->image") }}" style="width: 600px;">
+                            <div class="mb-3 slider-img">
+                                <img id="imgfile" src="{{ asset("images/home/slides/$slide->image") }}" style="width: 100%;">
                             </div>
                             <input id="image" name="image" type="file" class="form-control @error('image') is-invalid @enderror" onchange="javascript:loadFile('#image', '#imgfile')">
                             <small class="form-text text-muted">Recommended file size is (1920 x 640)px. Max size 2MB.</small>

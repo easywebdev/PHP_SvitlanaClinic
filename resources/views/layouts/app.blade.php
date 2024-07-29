@@ -13,6 +13,7 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{asset('css/alertify.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/adm.css')}}">
     @stack('css')
 
     <!-- Scripts -->
@@ -78,22 +79,26 @@
         <nav class="navbar navbar-expand-sm bg-light navbar-light">
             <div class="container">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
+                    <li class="nav-item toggle-btn">    
+                        <a class="nav-link"><span class="navbar-toggler-icon"></span></a>       
+                    </li>
+                    
+                    <li class="nav-item toggle-item">
                         <a class="nav-link" href="{{route('getHome')}}">Home</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item toggle-item">
                         <a class="nav-link" href="{{route('getSlides')}}">Slider</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item toggle-item">
                         <a class="nav-link" href="{{route('getServices')}}">Services</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item toggle-item">
                         <a class="nav-link" href="{{route('getContacts')}}">Contacts</a>
                     </li>
-                    <li>
+                    <li class="nav-item toggle-item">
                         <a class="nav-link" href="{{ route('elfinder.index') }}" target="_blank">File Manager</a>
                     </li>
-                    <li>
+                    <li class="nav-item toggle-item">
                         <a class="nav-link" href="{{ route('getFullStat') }}">Statistic</a>
                     </li>
                 </ul>
@@ -106,6 +111,7 @@
         </main>
     </div>
 
+    <script src="{{asset('js/adm.js')}}" type="application/javascript"></script>
     @stack('scripts')
 </body>
 </html>

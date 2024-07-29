@@ -28,34 +28,36 @@
     </head>
 
     <body>
-        <header class="s-header">
-            <div class="container flex-grid">
-                <div class="logo-wraper">
-                    <a href="{{ route('index') }}" class="link-base">
-                        <img src="{{ asset('images/logo.png') }}" alt="logo">
-                    </a>    
+        <div class="s-container">
+            <header class="s-header">
+                <div class="container flex-grid header-grid-adaptive">
+                    <div class="logo-wraper">
+                        <a href="{{ route('index') }}" class="link-base">
+                            <img src="{{ asset('images/logo.png') }}" alt="logo">
+                        </a>    
+                    </div>
+
+                    <div class="flex-grid__item_streach flex-column">
+                        <div class="">
+                            <h1 class="h1">{{ config('app.name', 'Svitlanaclinic') }}</h1>
+                        </div>    
+
+                        <nav class="">
+                            @include('mainmenu')
+                        </nav>
+                    </div>
                 </div>
+            </header>
 
-                <div class="flex-grid__item_streach flex-column">
-                    <div class="">
-                        <h1 class="h1">{{ config('app.name', 'Svitlanaclinic') }}</h1>
-                    </div>    
+            <main class="s-main">
+                @yield('content')
+            </main>
 
-                    <nav class="">
-                        @include('mainmenu')
-                    </nav>
-                </div>
-            </div>
-        </header>
+            <footer class="s-footer container">
+                @include('footer')
+            </footer>
 
-        <main class="s-main">
-            @yield('content')
-        </main>
-
-        <footer class="s-footer container">
-            @include('footer')
-        </footer>
-
-        @stack('scripts')
-    </body>
+            @stack('scripts')
+        </div>
+    </body>  
 </html>

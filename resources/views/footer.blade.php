@@ -1,6 +1,6 @@
 <?php $contact = App\Models\Contact::find(1)->get(['address', 'phone', 'email', 'facebook'])[0] ?>
-<div class="container flex-grid flex-grid_justify mb-1">
-    <div class="">
+<div class="container flex-grid flex-grid_justify mb-1 footer-grid-adaptive">
+    <div class="footer-block-wlimit">
         <h2 class="h2">
             {{ config('app.name', 'Laravel') }}
         </h2>

@@ -39,6 +39,8 @@ body {
 
 .text-content {
     text-align: justify;
+    font-size: 1rem;
+    color: #2e291b;
 }
 
 .text-center {
@@ -113,10 +115,17 @@ body {
 /**/
 
 /* Structural */
+.s-container {
+    max-width: 1000px;
+    box-sizing: border-box;
+    padding: 0 1rem;
+    margin-inline: auto;
+    background-color: rgba(0, 0, 0, 0.1)
+}
+
 .s-header {
     padding: 1rem;
     margin-bottom: 1rem;
-    background-color: rgba(255, 255, 255, 0.5)
 }
 
 .s-slider, .s-main {
@@ -129,9 +138,11 @@ body {
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 950px;
     margin-inline: auto;
     box-sizing: border-box;
+    font-size: 1rem;
+    color: #2e291b;
 }
 
 .flex-grid {
@@ -177,12 +188,12 @@ body {
     color: #2e291b;
 
     &:hover {
-        color: #c4a029;
+        color: #dec985;
     }
 }
 
     .nav__link_active {
-        color: #c4a029 !important;
+        color: #dec985 !important;
     }
 /**/
 
@@ -218,25 +229,84 @@ body {
     overflow: hidden;
     border-radius: 0.5rem;
     margin-bottom: 0.5rem;
-
-    &:hover {
-        box-shadow: 0.3rem 0.3rem 0.1rem rgba(0, 0, 0, 0.3);
-        transition-duration: 0.5s;
-    }
 }
 
 .grid-link, .grid-link:focus, .grid-link:visited {
     text-decoration: none;
     color: #2e291b;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
 
     &:hover {
         color:#dec985;
+        box-shadow: 0.3rem 0.3rem 0.1rem rgba(0, 0, 0, 0.3);
+        transition-duration: 0.5s;
     }
 }
 /**/
 
+/* Contacts */
+.contact-image-wrapper {
+    width: 12.5rem;
+    overflow: hidden;
+}
+
+.contact-image {
+    width: 100%;
+}
+/**/
+
 /* Footer */
+.footer-block-wlimit {
+    max-width: 15rem;
+    overflow: hidden;
+}
+
 .copyright {
     font-size: 1rem;
+}
+/**/
+
+/* Adaptive */
+@media (max-width: 1014px) {
+    .footer-grid-adaptive {
+        justify-content: center;
+    }
+
+    .footer-block-wlimit {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 938px) {
+    .services-grid-adaptive {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 800px) {
+    html {
+        font-size: 3vw;
+    }
+}
+
+@media (max-width: 450px) {
+    .header-grid-adaptive {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .logo-wraper {
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav__link_active, .nav__link:hover {
+        color: #ffffff !important;
+    }
 }
 /**/

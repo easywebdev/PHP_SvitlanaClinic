@@ -4,7 +4,7 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="card">
+        <div class="card pagestat-content-min-w">
             <div class="card-header">
                 <a class="navbar-brand text-primary" href="{{ route('getFullStat') }}">Statistic</a> ->
                 {{ Request::route('page') }}
