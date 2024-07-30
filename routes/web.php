@@ -14,6 +14,7 @@ use App\Http\Controllers\Adm\MovePositionController as MovePositionC;
 use App\Http\Controllers\Adm\SliderController as SliderC;
 use App\Http\Controllers\Adm\GalleryController as GalleryC;
 use App\Http\Controllers\Adm\StatisticController as StatisticC;
+use App\Http\Controllers\Adm\UserController as UserC;
 
 use App\Http\Controllers\MailController;
 
@@ -62,24 +63,27 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/adm/services', [ServicesC::class, 'getServices'])->name('getServices');
     Route::get('/adm/services/{id}', [ServicesC::class, 'getService'])->name('getService');
     Route::get('/adm/newservice', [ServicesC::class, 'newService'])->name('newService');
-    Route::get('adm/delservice/{id}', [ServicesC::class, 'delService'])->name('delService');
+    Route::get('/adm/delservice/{id}', [ServicesC::class, 'delService'])->name('delService');
     Route::post('/updateservice', [ServicesC::class, 'updateService'])->name('updateService');
     Route::post('/adm/addservice', [ServicesC::class, 'addService'])->name('addService');
 
     Route::get('/adm/gallery/{service_id}', [GalleryC::class, 'getServiceGallery'])->name('getServiceGallery');
     Route::get('adm/galleryimage/{id}', [GalleryC::class, 'getGalleryImage'])->name('getGalleryImage');
     Route::get('/adm/newgalleryimage/{service_id}', [GalleryC::class, 'newGalleryImage'])->name('newGalleryImage');
-    Route::get('adm/delgalleryimage/{id}', [GalleryC::class, 'delGalleryImage'])->name('delGalleryImage');
-    Route::post('adm/updategalleryimage', [GalleryC::class, 'updateGalleryImage'])->name('updateGalleryImage');
+    Route::get('/adm/delgalleryimage/{id}', [GalleryC::class, 'delGalleryImage'])->name('delGalleryImage');
+    Route::post('/adm/updategalleryimage', [GalleryC::class, 'updateGalleryImage'])->name('updateGalleryImage');
     Route::post('/adm/addgalleryimage', [GalleryC::class, 'addGalleryImage'])->name('addGalleryImage');
 
     Route::get('/adm/contacts', [ContactsC::class, 'getContacts'])->name('getContacts');
     Route::post('/adm/updatecontacts', [ContactsC::class, 'updateContacts'])->name('updateContacts');
 
-    Route::get('adm/fullstat', [StatisticC::class, 'getFullStat'])->name('getFullStat');
-    Route::get('adm/fullstat/{page}', [StatisticC::class, 'getPageStat'])->name('getPageStat');
-    Route::get('adm/delfullstat', [StatisticC::class, 'delFullStat'])->name('delFullStat');
-    Route::get('adm/delfulstat/{page}', [StatisticC::class, 'delPageStat'])->name('delPageStat');
+    Route::get('/adm/fullstat', [StatisticC::class, 'getFullStat'])->name('getFullStat');
+    Route::get('/adm/fullstat/{page}', [StatisticC::class, 'getPageStat'])->name('getPageStat');
+    Route::get('/adm/delfullstat', [StatisticC::class, 'delFullStat'])->name('delFullStat');
+    Route::get('/adm/delfulstat/{page}', [StatisticC::class, 'delPageStat'])->name('delPageStat');
+
+    Route::get('/adm/userprofile', [UserC::class, 'getUserProfile'])->name('getUserProfile');
+    Route::post('/adm/userprofile', [UserC::class, 'updateUserProfile'])->name('updateUserProfile');
 
     Route::post('/changeposition', [MovePositionC::class, 'changePosition'])->name('changePosition');
 });
